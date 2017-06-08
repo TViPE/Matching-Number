@@ -3,8 +3,7 @@ var compareArr = [];
 var count = 0;
 var oldVal;
 var isMatch = false;
-var btnID = -1;
-
+var isplayBtnClicked = false;
 
 //shuffle elements randomly
 function shuffle(arr){
@@ -82,7 +81,7 @@ function compareArrElem(){
 			$('#' + compareArr[1].index).text("#");
 			compareArr = [];
 			//$('#' + array[1].index).text("#");
-		}, 1000);
+		}, 500);
 	}
 }
 
@@ -91,12 +90,13 @@ function compareArrElem(){
 
 // Main function
 $(function(){
-	shuffle(arr);
-	console.log(arr);
-	//assignText(tempArr);
-	//hideText();
-	toggleText();
-
-
-
+	$('.playBtn').click(function(){
+		$('.header').hide();
+		$('.gameBoard').show();
+		shuffle(arr);
+		console.log(arr);
+		//assignText(tempArr);
+		//hideText();
+		toggleText();
+	});
 })
