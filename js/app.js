@@ -57,9 +57,7 @@ function toggleText(){
 			console.log(compareArr);
 			compareArrElem();
 			count = 0;
-		}
-
-			
+		}			
 	});
 }
 
@@ -85,8 +83,12 @@ function compareArrElem(){
 	}
 }
 
-
-
+function restart(){
+	$('.boardBtn').text("#");
+	arr =[0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7];
+	shuffle(arr);
+	toggleText();
+}
 
 // Main function
 $(function(){
@@ -98,5 +100,8 @@ $(function(){
 		//assignText(tempArr);
 		//hideText();
 		toggleText();
+		$('.restartBtn').click(function(){
+			restart();
+		});
 	});
 })
